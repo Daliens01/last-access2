@@ -1,11 +1,5 @@
 import React from 'react'
-export interface UserData{
-  MATRICULA: string,
-  ALUMNO: string,
-  CURSOS: string,
-  ACCESO: string
-}
-
+import { UserData } from '../interfaces/interfaces';
 const ApiHook = ({id}: {id: string})=>{
     const [data, setData] = React.useState<UserData[]>([])
     const [count, setCount] = React.useState("");

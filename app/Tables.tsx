@@ -1,14 +1,13 @@
 "use client"
 import React from 'react'
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@heroui/table";
-import ExcelLic from "@/components/ExcelLic";
+import ExcelButton from "@/components/ExcelButtonDownload";
 // import { useSearchParams } from "next/navigation";
 import { ApiHook } from './hooks/useApi';
 import { Reload } from './hooks/useReload';
-
-
+import { UserData } from './interfaces/interfaces';
+import { Example } from './example';
 const Tables = ({ id }: { id: string }) => {
-  console.log(`hola tabla ${id}`);
 
   try {
     //fetch para obtener los resultados de la api
@@ -59,7 +58,7 @@ const Tables = ({ id }: { id: string }) => {
         </Table>
 
         <div className='p-4 '>
-          <ExcelLic data={data} name={id} />
+          <ExcelButton data={data} name={id} />
         </div>
       </div>)
     }
